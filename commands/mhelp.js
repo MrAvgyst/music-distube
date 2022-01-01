@@ -3,7 +3,6 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'mhelp',
     run: (client, message, args) => {
-        message.delete();
         let embed = new Discord.MessageEmbed()
             .setColor('RANDOM')
             .setTitle('Музыкальные команды :notes:')
@@ -14,8 +13,7 @@ module.exports = {
                     { name: "\`3)\` -stop :point_down:", value: `\`Остановить музыку\``, inline: true},
                     { name: "\`4)\` -queue :point_down:", value: `\`Посмотреть текущую очередь\``, inline: true}
                 )
-            .setTimestamp()
-            .setFooter('Self Control', `${client.user.displayAvatarURL()}`);
+            .setTimestamp().setFooter('Self Control', `${client.user.displayAvatarURL()}`);
         message.channel.send(embed);
     }
 };
